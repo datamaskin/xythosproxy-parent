@@ -1,0 +1,28 @@
+<!-- 
+    Document   : UploadFiles.html
+    Created on : Jun 15, 2008, 7:39:25 PM
+    Author     : david
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+  <HEAD>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252"/>
+    <TITLE>File Upload Page</TITLE>
+  </HEAD>
+  <BODY>Upload Files
+    <!-- <FORM name="filesForm" action="ProcessFileUpload.jsp" method="post" enctype="multipart/form-data"> -->
+    <FORM name="filesForm" action="FileUploadProcessServlet" method="get" enctype="multipart/form-data">
+        File 1:<input type="file" name="file1"/><br>
+        File 2:<input type="file" name="file2"/><br>
+        File 3:<input type="file" name="file3"/><br>
+        URL:<input type="text" name="url"/><br>
+        User Name:<input type="text" name="username" length="16" /><br>
+        Password:<input type="password" name="password" length="8" /><br>
+        Filename:<input type="file" name="filename" length ="64" /><br>
+        Billing Date:<input type="text" name="billingdate" maxlength="6"/><br>
+        Schema:<input type="text" name="schema" maxlength="8" /><br>
+        Description:<input type="text" name="description" maxlength="64" /><br>
+        <input type="submit" name="Submit" value="Upload Files"/>
+    </FORM>
+  </BODY>
+</HTML>

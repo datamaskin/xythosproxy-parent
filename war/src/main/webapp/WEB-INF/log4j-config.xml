@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- Just a sample. The real log4j config file will be configured at runtime -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+
+  <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+    <param name="file" value="/var/log/fafds/testing.log"/>
+    <param name="append" value="true"/>
+    <param name="maxFileSize" value="20000000"/>
+    <param name="maxBackupIndex" value="10"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d [%x] %c{5}- %m%n"/>
+    </layout>
+  </appender>
+
+  <root>
+    <level value="debug"/>
+    <appender-ref ref="FILE"/>
+  </root>
+
+</log4j:configuration>

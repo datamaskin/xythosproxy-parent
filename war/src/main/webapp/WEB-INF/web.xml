@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <servlet>
+        <servlet-name>XythosProxyServlet</servlet-name>
+        <servlet-class>com.fds.fc.xythosproxy.XythosProxyServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>log4jservlet</servlet-name>
+        <servlet-class>com.fds.fc.logging.servlet.Log4jServlet</servlet-class>
+        <init-param>
+            <param-name>log4j-init-sys-prop-name</param-name>
+        <!-- 
+            Change this value if you need a different name for the sys property.
+        -->
+            <param-value>log4j-config</param-value>
+        </init-param>
+        <init-param>
+            <param-name>log4j-config</param-name>
+        <!-- 
+            This is the default log4j config that will be used if there is no
+            value defined via system property 
+        -->
+            <param-value>/WEB-INF/log4j-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>log4jservlet</servlet-name>
+        <url-pattern>/servlet/log4jservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>XythosProxyServlet</servlet-name>
+        <url-pattern>/XythosProxyServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+        	10
+        </session-timeout>
+    </session-config>
+</web-app>
